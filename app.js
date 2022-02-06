@@ -14,11 +14,3 @@ for (let i = 0; i < newsFeed.length; i++) {
 }
 
 document.getElementById('root').appendChild(ul);
-
-/*
-`<ul>
-  <li>newsFeed[0].title</li>
-  <li>newsFeed[1].title</li>
-  <li>newsFeed[2].title</li>
-</ul>`
-*/
