@@ -27,3 +27,14 @@
   - location: window 전역 객체의 속성으로, 읽기 전용인 Location 객체를 얻어 올 수 있고, 현재 문서의 URL에 대한 정보를 가짐
     - `location.hash.substr(1)`: Location 객체의 hash 속성의 값의 첫번째 자리 문자 제거
     - `CONTENT_URL.replace('@id', id)`: CONTENT_URL에서 @id를 포함한 문자열을 변수 id 값으로 대체
+
+## 3강 주요개념
+
+- DOM API를 사용하면서 생기는 UI 구조가 잘 드러나지 않는 문제점
+  - DOM API 사용을 최소화하고 문자열로 처리
+  - `innerHTML`: 문자열 내부에 HTML 태그가 포함되어 있으면 HTML로 변환해주는 DOM API
+- 중복되는 코드 리팩토링: 2개 이상 반복되는 코드가 있다면, 재사용이 가능한 코드(함수)로 만든다
+  - 데이터를 담을 수 있는 그릇 → 변수
+  - 변수 여러 개를 담을 수 있는 그릇 → 객체
+  - 코드를 묶을 수 있는 그릇 → 함수
+  - `getData`: ajax 호출을 여러번 반복하던 코드들을 `getData` 함수에 위임함으로서 함수 실행만으로 해당 코드 더미가 실행되도록 설정
