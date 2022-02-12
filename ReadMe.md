@@ -46,3 +46,17 @@
   - `newsDetail`: 뉴스 목록을 클릭 했을 때, 해당 뉴스의 상세 정보를 화면에 출력하는 함수
 - 라우터: 화면을 중계하는 역할 → 화면을 전환
   - `router`: URL의 해시값에 따라, `newsFeed` 함수와 `newsDetail` 함수를 실행시켜 화면을 전환해주는 함수
+
+## 5강 주요개념
+
+- state
+  - `store`: 각 함수들에서 공통으로 사용될 수 있는 변수들의 묶음
+  - `currentPage`: 어디에서 사용되는지 인지하고 공유될 수 있도록 스코프 설정 → store
+- router 함수 구조
+  - 글 내용 보기 해시 구조: `show/:id`
+  - 글 페이징 해시 구조: `page/currentPage`
+- 방어코드
+  - 이전페이지: 현재 페이지가 1보다 큰 경우에만 이전 페이지가 존재
+    - `store.currentPage > 1 ? store.currentPage - 1 : 1`
+  - 다음페이지: 현재 페이지까지의 글 목록 개수가 뉴스 목록의 개수보다 작으면 다음 페이지가 존재
+    - `store.currentPage * 10 < newsFeed.length? store.currentPage + 1: store.currentPage`
