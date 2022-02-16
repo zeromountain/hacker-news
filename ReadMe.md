@@ -60,3 +60,25 @@
     - `store.currentPage > 1 ? store.currentPage - 1 : 1`
   - 다음페이지: 현재 페이지까지의 글 목록 개수가 뉴스 목록의 개수보다 작으면 다음 페이지가 존재
     - `store.currentPage * 10 < newsFeed.length? store.currentPage + 1: store.currentPage`
+
+## 6강 주요개념
+
+- 코드의양과 복잡도 반비례하도록 구현 → 템플릿 사용
+  - 배열을 사용해 DOM API를 사용하지 않고 템플릿을 구현했지만 코드의 양이 많아지면 UI 구조를 파악하기 어려움이 증가할 여지가 있음
+  - 템플릿 → 템플릿 리터럴을 활용한 직관적인 표현
+  - 마킹 → 템플릿 리터럴 내부, 데이터로 교체할 위치에 고유한 마킹 표시
+
+```js
+let template = `
+    <div class="container flex flex-col items-center">
+      <h1>Hacker News</h1>
+      <ul>
+        {{__news_feed__}}
+      </ul>
+      <div>
+        <a href="#/page/{{__prev_page__}}">이전 페이지</a>
+        <a href="#/page/{{__next_page__}}">다음 페이지</a>
+      </div>
+    </div>
+  `;
+```
